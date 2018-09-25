@@ -51,6 +51,18 @@ To-do:
 $ composer create-project a-jue/moeins
 ```
 
+```
+#等待安装依赖库后，会自动执行安装脚本
+#出现如下提示表示安装完成
+
+> Illuminate\Foundation\ComposerScripts::postInstall
+> php artisan optimize
+Generating optimized class loader
+The compiled services file has been removed.
+> php artisan key:generate
+Application key [base64:Hx0I9UUQg7OyIz8lpDYG6Y/gW1uxS760ERdWvGG2jyQ=] set successfully.
+
+```
 
 #### 2.目录权限
 将`public` 子目录设置为对外公开的web目录
@@ -82,7 +94,14 @@ git clone https://github.com/178146582/moeins.git
 composer install
 ```
 
-#### 3.从"通过Composer安装"的第二步继续
+#### 3.PHP执行以下命令 
+```
+php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+php artisan key:generate
+```
+
+#### 4.从"通过Composer安装"的第二步继续
 
 许可证
 ------------
