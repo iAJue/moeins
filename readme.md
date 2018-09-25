@@ -64,10 +64,10 @@ Application key [base64:Hx0I9UUQg7OyIz8lpDYG6Y/gW1uxS760ERdWvGG2jyQ=] set succes
 
 ```
 
-#### 2.目录权限
+#### 2. 目录权限
 将`public` 子目录设置为对外公开的web目录
 
-#### 3.URL重写
+#### 3. URL重写
 对于Apache服务器，项目目录下的`.htaccess`已经配置好重写规则，如有需求酌情修改.
 对于Nginx服务器，以下是一个可供参考的配置：
 ```
@@ -76,8 +76,7 @@ location / {
 }  
 ```
 
-#### 4.完成
-* 重命名`.env.example`为`.env`
+#### 4. 完成
 * 给本项目一个Star~
 * 访问你的`域名`即可
 
@@ -88,20 +87,20 @@ location / {
 ```
 git clone https://github.com/178146582/moeins.git
 ```
-#### 2.composer安装扩展包
+#### 2. composer安装扩展包
 
 ```
 composer install
 ```
 
-#### 3.PHP执行以下命令 
+#### 3. PHP执行以下命令 
 ```
 php -r "file_exists('.env') || copy('.env.example', '.env');"
 
 php artisan key:generate
 ```
 
-#### 4.从"通过Composer安装"的第二步继续
+#### 4. 从"通过Composer安装"的第二步继续
 
 许可证
 ------------
