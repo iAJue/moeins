@@ -130,15 +130,15 @@ class IndexController extends Controller {
 			preg_match($preg,$data,$res);
 		}elseif($type == 'm'){
 			// 电影
-			preg_match_all('|<a data-daochu=".*?" href="(.*?)" class="js-site-btn btn btn-play"></a>|', $data, $pages);
-			preg_match('|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?<span class="s">(.*?)</span[\s\S]*?<p class="tag">(.*?)</p>[\s\S]*?<div class="g-clear item-wrap">([\s\S]*?)</div>[\s\S]*?style="display:none;"><span>([\s\S]*?)<a href="#"|',$data,$res);
+			preg_match_all('|<a href="(.*?)" class="g-playicon s-cover-img" data-daochu=".*?" data-num="1">|', $data, $pages);
+			preg_match('|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?<div class="s-title-right">([\s\S]*?)</div>[\s\S]*?<p class="item"><span class="cat-title">([\s\S]*?)</div>[\s\S]*display:none;"><span>([\s\S]*?)(.*?)<a href="#"|',$data,$res);
 		}else {
 			// 电视剧and动漫
 			preg_match_all('|<a data-num="(.*?)" data-daochu=".*?" href="(.*?)">|',stristr($data,'num-tab-main g-clear js-tab'),$pages);
 			$preg = '|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?(.*?)<p class="tag">(.*?)</p>[\s\S]*?<div class="g-clear item-wrap">([\s\S]*?)</div[\s\S]*?display:none;"><span>([\s\S]*?)<a href="#"|';
 			preg_match($preg,$data,$res);
 		}
-		
+
 		return view('detail', [
 			'pages' => $pages,
 			'count' => count($pages[0]),
