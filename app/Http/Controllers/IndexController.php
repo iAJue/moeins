@@ -126,7 +126,7 @@ class IndexController extends Controller {
 		if ($type == 'va') {
 			// 综艺
 			preg_match_all("|<a href='(.*?)' d[\s\S]*?<span class='w-newfigure-hint'>(.*?)</span>|",stristr($data,'s-month-tab'),$pages);
-			$preg = '|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?(.*?)<p class="tag">(.*?)</p>[\s\S]*?<div class="base-item-wrap">([\s\S]*?)</div>[\s\S]*?display:none;"><span>([\s\S]*?)<a href="#"|';
+			$preg = '|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?(.*?)<p class="tag">(.*?)</p>[\s\S]*?<span class="cat-title">([\s\S]*?)</div>[\s\S]*?display:none;"><span>([\s\S]*?)<a href="#"|';
 			preg_match($preg,$data,$res);
 		}elseif($type == 'm'){
 			// 电影

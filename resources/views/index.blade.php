@@ -132,7 +132,7 @@
 
 </div>
 
-<div class="am-u-lg-3">
+<div class="am-u-lg-3" style="padding-right:0px;">
 
 @for ($q = 0;$q < 3;$q++)
     <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-no-layout">
