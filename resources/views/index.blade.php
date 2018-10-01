@@ -7,7 +7,7 @@
 
 <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{"animation":"slide","slideshow":true,"controlNav":false}' >
   <ul class="am-slides">
-      @for ($i = 0;$i < 6; $i++)
+      @for ($i = 0;$i < 5; $i++)
       <li>
         <a href="{{url($slider[2][$i])}}">
           <img src="{{$slider[1][$i]}}">
@@ -29,7 +29,7 @@
     @for($i = 0; $i < 20; $i++)
         <li>
             <a href="{{url($res[1][$i])}}" target="_blank">
-                <div class="g-playicon">
+                <div class="g-playicon dianshi">
                     <img src="{{$res[2][$i]}}">
                     <span class="hint">{{$res[3][$i]}}</span>
                 </div>

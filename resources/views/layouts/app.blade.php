@@ -35,7 +35,7 @@
     
     <link rel="canonical" href="http://www.example.com/">
     
-    <link rel="stylesheet" href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.min.css">
+    <link rel="stylesheet" href="https://lib.baomitu.com/amazeui/2.7.2/css/amazeui.min.css">
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 </head>
 <body>
@@ -121,16 +121,16 @@
     </a>
 </div>
 <!--[if (gte IE 9)|!(IE)]><!-->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <!--<![endif]-->
 <!--[if lte IE 8 ]>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<script src="https://lib.baomitu.com/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
 <![endif]-->
-<script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-<script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+<script src="https://lib.baomitu.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script src="https://lib.baomitu.com/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<script src="https://lib.baomitu.com/layer/3.1.1/layer.js"></script>
 <script src="{{asset('js/ckplayer.min.js')}}"></script>
 <script type="text/javascript">
 var store = $.AMUI.store;
