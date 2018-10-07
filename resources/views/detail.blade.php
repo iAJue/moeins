@@ -47,7 +47,7 @@ $(".my-btn").click(function() {
 
 function refreshVideo(videoUrl) {
 	record();
-	$("#vip-player").attr("src", 'http://yun.baiyug.cn/vip/index.php?url=' + videoUrl);
+	$("#vip-player").attr("src", 'http://yun.odflv.com/?url=' + videoUrl);
 }
 
 refreshVideo('{{$video}}');

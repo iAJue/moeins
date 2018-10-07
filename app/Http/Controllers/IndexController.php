@@ -148,28 +148,6 @@ class IndexController extends Controller {
 		]);
 	}
 
-	/**
-	 * 视频解析
-	 * @return [type] [description]
-	 */
-	private function jx($url){
-		$url = urlencode($url);
-		$data = curl_get_https('https://yun.odflv.com/odflv/api.php?referer=&time=1536566765&key=20380e29f4e9081410865467d9d00090&url='.$url.'&type=&xml=1');
-		$data = getSubstr($data,'<![CDATA[',']]');
-		return $data=='' ? false : urldecode($data);
-	}
-
-	/**
-	 * 对外公开的api
-	 * @return [type] [description]
-	 */
-	public function api(Request $request){
-		if ($url = $this->jx($request->input('url'))) {
-			return ['status' => '0', 'msg' => $url];
-		}
-		return ['status' => '1', 'msg' => '视频解析失败'];
-		
-	}
 
 	/**
 	 * 搜索视频
