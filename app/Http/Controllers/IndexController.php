@@ -134,7 +134,12 @@ class IndexController extends Controller {
 			preg_match('|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?<div class="s-title-right">([\s\S]*?)</div>[\s\S]*?<p class="item"><span class="cat-title">([\s\S]*?)</div>[\s\S]*display:none;"><span>([\s\S]*?)(.*?)<a href="#"|',$data,$res);
 		}else {
 			// 电视剧and动漫
-			preg_match_all('|<a data-num="(.*?)" data-daochu=".*?" href="(.*?)">|',stristr($data,'num-tab-main g-clear js-tab'),$pages);
+			if ($type == 'ct') {
+				// 哪个程序员写的，劳资不打死他
+				preg_match_all('|<a data-num="(.*?)"data-daochu=".*?" href="(.*?)">|',$data,$pages);
+			}else{
+				preg_match_all('|<a data-num="(.*?)" data-daochu=".*?" href="(.*?)">|',stristr($data,'num-tab-main g-clear js-tab'),$pages);
+			}
 			$preg = '|<img src="(.*?)">\r[\s\S]*?<h1>(.*?)</h1>[\s\S]*?(.*?)<p class="tag">(.*?)</p>[\s\S]*?<div class="g-clear item-wrap">([\s\S]*?)</div[\s\S]*?display:none;"><span>([\s\S]*?)<a href="#"|';
 			preg_match($preg,$data,$res);
 		}

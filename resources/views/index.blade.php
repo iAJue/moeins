@@ -168,7 +168,7 @@
     @for ($i = 0;$i < 23; $i++)
         <li><a href="{{$links[1][$i]}}" target="_blank"><img src="{{$links[2][$i]}}"></a></li>
     @endfor
-    <li><a href="https://www.moeins.cn/?{{url('/')}}" target="_blank"><img src="https://www.moeins.cn/images/logo.png"></a></li>
+    <li><a href="http://www.moeins.cn/?{{url('/')}}" target="_blank"><img src="http://www.moeins.cn/images/logo.png"></a></li>
     </ul>
 </div>
 </div>
