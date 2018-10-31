@@ -79,12 +79,10 @@
                 <a class="js-filter-close" href="#" style="display: none;">收起 <i class="am-icon-arrow-up am-icon-fw"></i></a>
             </dd>
         </dl>
-
-
     </div>
 
     <div class="s-tab-main">
-        <ul class="am-avg-sm-3 am-avg-md-4 am-avg-lg-6 am-thumbnails">
+        <ul class="am-avg-sm-3 am-avg-md-4 am-avg-lg-7 am-thumbnails">
         @for($i = 0; $i < $count; $i++)
             <li>
                 <a href="{{url($res[1][$i])}}" target="_blank">
@@ -92,14 +90,23 @@
                         <img src="{{$res[2][$i]}}">
                         <span class="hint">{{$res[3][$i]}}</span>
                     </div>
+            @if ($type == 'dongman')
                     <div class="detail">
                         <p class="title">
                             <span class="s1">{{$res[4][$i]}}</span>
-                            <span class="s2">{{$res[5][$i]}}</span>
+                        </p>
+                    </div>
+                </a>
+            @else
+                    <div class="detail">
+                        <p class="title">
+                            <span class="s1">{{$res[5][$i]}}</span>
+                            <span class="s2">{{strip_tags($res[4][$i])}}</span>
                         </p>
                         <p class="star">{{$res[6][$i]}}</p>
                     </div>
                 </a>
+            @endif
             </li>
         @endfor
         </ul>

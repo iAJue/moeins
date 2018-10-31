@@ -56,7 +56,11 @@ class IndexController extends Controller {
 		$data = curl_get_https('https://www.360kan.com/'.$type.'/list.php?year='.$year.'&area='.$area.'&act=all&cat='.$cat.'&pageno='.$page);
 		
 		// 匹配当前影视
-		preg_match_all('|<a class="js-tongjic" href="(.*?)">[\s\S]*?<div class="cover g-playicon">[\s\S]*?<img src="(.*?)">[\s\S]*?<span class="hint">(.*?)</span>[\s\S]*?</div>[\s\S]*?<div class="detail">[\s\S]*?<p class="title g-clear">[\s\S]*?<span class="s1">(.*?)</span>[\s\S]*?<span class="s2">(.*?)</span>[\s\S]*?</p>[\s\S]*?<p class="star">(.*?)</p>|', $data, $matches);
+		if ($type == 'dongman') {
+			preg_match_all('|<a class="js-tongjic" href="(.*?)">[\s\S]*?<img src="(.*?)">[\s\S]*?<span class="hint">(.*?)</span>[\s\S]*?<span class="s1">(.*?)</span>|', $data, $matches);
+		}else{
+			preg_match_all('|<a class="js-tongjic" href="(.*?)">[\s\S]*?<img src="(.*?)">[\s\S]*?<span class="hint">(.*?)</span>([\s\S]*?)<span class="s1">(.*?)</span>[\s\S]*?<p class="star">(.*?)</p>|', $data, $matches);
+		}
 
 		// 匹配页数
 		preg_match_all("|target='_self'.*?>(\d*?)</a>|",$data,$pages);
@@ -79,13 +83,11 @@ class IndexController extends Controller {
 
 		// 匹配分类
 		preg_match_all('!&cat=(.*?)" target="_self">(.*?)\s|</a>\s*?<b class="on">(.*?)</b>!',getSubstr($data,'类型:','收起'),$cats);
-
 		// 匹配年代
 		preg_match_all('!&year=(.*?)" target="_self">(.*?)\s|</a>\s*?<b class="on">(.*?)</b>!',getSubstr($data,'年代:','收起'),$years);
-
 		// 匹配地区
 		preg_match_all('!&area=(.*?)" target="_self">(.*?)\s|</a>\s*?<b class="on">(.*?)</b>!',getSubstr($data,'地区:','收起'),$areas);
-
+		
 		return view('list', [
 			'page_count' => $page_count, //总页数
 			'start' => $start,

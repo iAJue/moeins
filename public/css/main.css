@@ -10,9 +10,9 @@ li{list-style:none}
 .s-tab-main .hint{position:absolute;right:4px;bottom:4px;padding:2px 6px;background:rgba(0,0,0,.8);color:#fff;border-radius:2px}
 .s-tab-main .detail{width:100%;height:53px;background:#fff;overflow:hidden}
 .s-tab-main .title{font-size:14px;padding:7px 5px 3px 5px}
-.s-tab-main .title .s1{display:inline-block;float:left;width:144px;height:20px;line-height:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#222}
+.s-tab-main .title .s1{display:inline-block;float:left;width: 120px;height:20px;line-height:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#222}
 .s-tab-main .title .s2{float:right;color:#ff7b00;font-size:16px}
-.s-tab-main .star{font-size:12px;color:#999;margin:0 5px;width:170px;height:18px;line-height:18px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top:-20px}
+.s-tab-main .star{font-size:12px;color:#999;margin:0 5px;width: 148px;height:18px;line-height:18px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-top:-20px}
 .s-tab-main{margin-top:20px;overflow:hidden}
 .g-playicon{overflow:hidden;position:relative}
 .g-playicon:after{visibility:hidden;position:absolute;overflow:hidden;cursor:pointer}
